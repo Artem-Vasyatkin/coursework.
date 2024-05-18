@@ -20,9 +20,9 @@ public class Main {
         calculateSumSalaryExpenses();
         employeeLowersSalary();
         employeeHighestSalary();
+        calculateAveragesSalary();
         findEmployeeAmount();
         printNamesEmployees();
-        calculateAveragesSalary(employees.length);
     }
 
     public static void printAllEmployees() {
@@ -63,14 +63,14 @@ public class Main {
                 + employees[employeeLower].getFullName());
     }
 
-    public static void calculateAveragesSalary (double percent) {
-        percent /= 100;
-        double expenses = 0.0;
+    public static void calculateAveragesSalary () {
+        double totalSalary = 0.0;
+        int numberOfEmployees = employees.length;
         for (Employee employee : employees) {
-            expenses += employee.getSalary() * percent;
-
+            totalSalary += employee.getSalary();
         }
-        System.out.println(expenses);
+        double averageSalary = totalSalary / numberOfEmployees;
+        System.out.println("\n" + averageSalary);
     }
 
     public static void findEmployeeAmount() {
